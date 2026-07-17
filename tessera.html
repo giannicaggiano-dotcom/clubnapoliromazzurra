@@ -134,7 +134,15 @@ fetch("soci.json")
 .then(r=>r.json())
 .then(soci=>{
 
-let socio=soci[0];
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id") || "CNR-260001";
+
+const socio = soci.find(s => s.id === id);
+
+if (!socio) {
+    document.body.innerHTML = "<h1 style='color:white'>Tessera non trovata</h1>";
+    return;
+}
 
 document.getElementById("nome").innerHTML=socio.nome+" "+socio.cognome;
 
