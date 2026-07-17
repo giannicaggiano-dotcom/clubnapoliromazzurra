@@ -1,1 +1,13 @@
-
+[
+  {
+    "id": "CNR-260001",
+    "numero": 1,
+    "nome": "Arturo",
+    "cognome": "Matarazzo",
+    "qualifica": "Presidente",
+    "foto": "images/arturo-matarazzo.jpg",
+    "validita": "Permanente",
+    "iscrizione": "01/08/2026",
+    "stato": "ATTIVA"
+  }
+]
