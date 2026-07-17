@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Tessera Socio</title>
 
+<style>
+
+body{
+    background:#0a2c61;
+    font-family:Arial;
+    color:white;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:360px;
+    background:white;
+    color:#222;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.4);
+}
+
+.header{
+    background:#0a2c61;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+.header img{
+    width:90px;
+    border-radius:50%;
+}
+
+.foto{
+    width:120px;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    border:3px solid #0a2c61;
+}
+
+.center{
+    text-align:center;
+    padding:20px;
+}
+
+table{
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+}
+
+td{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+.nome{
+    font-size:24px;
+    font-weight:bold;
+    color:#0a2c61;
+}
+
+.valida{
+    color:green;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+<img src="logo-centenario.jpeg">
+<h2>CLUB NAPOLI ROMAZZURRA</h2>
+40° ANNIVERSARIO
+</div>
+
+<div class="center">
+
+<img id="foto" class="foto">
+
+<div class="nome" id="nome"></div>
+
+</div>
+
+<table>
+
+<tr>
+<td>Numero</td>
+<td id="numero"></td>
+</tr>
+
+<tr>
+<td>Qualifica</td>
+<td id="qualifica"></td>
+</tr>
+
+<tr>
+<td>Iscrizione</td>
+<td id="iscrizione"></td>
+</tr>
+
+<tr>
+<td>Validità</td>
+<td id="validita"></td>
+</tr>
+
+<tr>
+<td>Stato</td>
+<td class="valida" id="stato"></td>
+</tr>
+
+</table>
+
+<br><br>
+
+</div>
+
+<script>
+
+fetch("soci.json")
+.then(r=>r.json())
+.then(soci=>{
+
+let socio=soci[0];
+
+document.getElementById("nome").innerHTML=socio.nome+" "+socio.cognome;
+
+document.getElementById("numero").innerHTML=socio.numero;
+
+document.getElementById("qualifica").innerHTML=socio.qualifica;
+
+document.getElementById("iscrizione").innerHTML=socio.iscrizione;
+
+document.getElementById("validita").innerHTML=socio.validita;
+
+document.getElementById("stato").innerHTML=socio.stato;
+
+document.getElementById("foto").src=socio.foto;
+
+});
+
+</script>
+
+</body>
+</html>
