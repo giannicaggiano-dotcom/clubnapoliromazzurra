@@ -363,13 +363,15 @@ body{
 
 .member-data{
 
-    background:rgba(255,255,255,.08);
+     background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:2px solid #d4af37;
 
     border-radius:18px;
 
     padding:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 
 }
 
@@ -413,14 +415,16 @@ body{
 
     margin-top:30px;
 
-    padding:18px;
+    padding:18px 22px;
 
-    background:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.06);
 
-    border-left:5px solid #d4af37;
+    border:2px solid #d4af37;
 
-    border-radius:10px;
+    border-radius:18px;
 
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+   
 }
 
 .member-message p{
@@ -488,13 +492,15 @@ body{
 
     background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:2px solid #d4af37;
 
     border-radius:18px;
 
     padding:18px;
 
     text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 
 }
 
