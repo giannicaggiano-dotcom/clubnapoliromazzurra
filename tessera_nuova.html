@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tessera Socio</title>
+<link rel="stylesheet" href="card.css">
+</head>
+<body>
+<div class="card">
+<div class="header">
+<div class="logoArea"><img src="logo40.jpg" alt="Logo 40° anniversario"></div>
+<div class="titleArea"><h1>CLUB NAPOLI ROMAZZURRA</h1><p>Tessera Socio Ufficiale</p></div>
+</div>
+<div class="content">
+<div class="left"><img id="foto" class="foto" alt="Foto socio"></div>
+<div class="center">
+<div class="nome" id="nome"></div>
+<div class="qualifica" id="qualifica"></div>
+<table>
+<tr><td>Numero Tessera</td><td id="numero"></td></tr>
+<tr><td>Iscrizione</td><td id="iscrizione"></td></tr>
+<tr><td>Validità</td><td id="validita"></td></tr>
+<tr><td>Stato</td><td id="stato"></td></tr>
+</table>
+</div>
+<div class="right"><div class="qrPlaceholder"><img id="qr"><p>Verifica tessera</p></div></div>
+</div>
+</div>
+<script>
+fetch("soci.json").then(r=>r.json()).then(soci=>{
+const params=new URLSearchParams(window.location.search);
+const id=params.get("id")||"CNR-260001";
+const socio=soci.find(s=>s.id===id);
+if(!socio){document.body.innerHTML="<h1>Tessera non trovata</h1>";return;}
+document.getElementById("nome").textContent=socio.nome+" "+socio.cognome;
+document.getElementById("qualifica").textContent=socio.qualifica;
+document.getElementById("numero").textContent=socio.numero;
+document.getElementById("iscrizione").textContent=socio.iscrizione;
+document.getElementById("validita").textContent=socio.validita;
+document.getElementById("stato").textContent=socio.stato;
+document.getElementById("foto").src=socio.foto;
+const v="https://giannicaggiano-dotcom.github.io/clubnapoliromazzurra/verifica.html?id="+encodeURIComponent(id);
+document.getElementById("qr").src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data="+encodeURIComponent(v);
+});
+</script>
+</body>
+</html>
