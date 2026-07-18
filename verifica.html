@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verifica Tessera - Club Napoli Romazzurra</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#173f7d;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.card{width:420px;background:#1c4fa2;border:3px solid #d4af37;border-radius:20px;padding:30px;text-align:center;box-shadow:0 15px 35px rgba(0,0,0,.35)}
+.logo{width:110px;border-radius:50%;background:#fff;padding:8px;border:3px solid #d4af37}
+.ok{color:#48e06a;font-size:30px;font-weight:bold;margin:18px 0}
+#foto{width:140px;height:180px;object-fit:cover;border-radius:14px;border:3px solid #d4af37;margin:15px auto;display:block}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+th{text-align:left;color:#d4af37}
+.small{margin-top:18px;font-size:13px;color:#dbe7ff}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="logo-centenario.jpeg" class="logo" alt="Logo">
+<div class="ok">✔ TESSERA VALIDA</div>
+<img id="foto" src="" alt="Foto socio">
+<h2 id="nome"></h2>
+<h3 id="qualifica" style="color:#d4af37"></h3>
+<table>
+<tr><th>Numero Tessera</th><td id="numero"></td></tr>
+<tr><th>Iscrizione</th><td id="iscrizione"></td></tr>
+<tr><th>Validità</th><td id="validita"></td></tr>
+</table>
+<div class="small">Club Napoli Romazzurra<br>Verifica ufficiale della tessera.</div>
+</div>
+<script>
+fetch("soci.json")
+.then(r=>r.json())
+.then(soci=>{
+ const id=new URLSearchParams(location.search).get("id");
+ const socio=soci.find(s=>s.id===id);
+ if(!socio){
+   document.body.innerHTML="<h1 style='color:white'>Tessera non valida</h1>";
+   return;
+ }
+ foto.src=socio.foto;
+ nome.textContent=socio.nome+" "+socio.cognome;
+ qualifica.textContent=socio.qualifica;
+ numero.textContent=socio.numero;
+ iscrizione.textContent=socio.iscrizione;
+ validita.textContent=socio.validita;
+})
+.catch(()=>{
+ document.body.innerHTML="<h1 style='color:white'>Errore nel caricamento dati.</h1>";
+});
+</script>
+</body>
+</html>
