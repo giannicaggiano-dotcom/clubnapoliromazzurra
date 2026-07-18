@@ -247,6 +247,10 @@ body{
 
     align-items:center;
 
+    justify-content:flex-start;
+
+    padding-top:0;
+
 }
 
 .photo-frame{
@@ -503,6 +507,8 @@ body{
     text-align:center;
 
     box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+   margin-top:34px;
 
 }
 
