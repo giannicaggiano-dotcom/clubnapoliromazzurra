@@ -351,6 +351,35 @@ fetch("soci.json")
 
 });
 
+      /* ===== Ridimensionamento automatico tessera ===== */
+
+function scalaTessera() {
+
+    const card = document.querySelector(".card");
+    const page = document.querySelector(".page");
+
+    if (!card || !page) return;
+
+    // ripristina la scala
+    card.style.transform = "scale(1)";
+
+    const cardWidth = 980;
+    const margin = 20;
+
+    const available = window.innerWidth - margin * 2;
+
+    const scale = Math.min(1, available / cardWidth);
+
+    card.style.transformOrigin = "top center";
+    card.style.transform = `scale(${scale})`;
+
+    page.style.height = `${560 * scale + 40}px`;
+
+}
+
+window.addEventListener("load", scalaTessera);
+window.addEventListener("resize", scalaTessera);
+      
 </script>
 
 </body>
