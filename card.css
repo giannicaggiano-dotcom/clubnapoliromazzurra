@@ -333,11 +333,13 @@ body{
 
     color:white;
 
+    padding-top:18px;
+
 }
 
 .member-name{
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
 }
 
@@ -369,16 +371,15 @@ body{
 
 .member-data{
 
-     background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
 
     border:2px solid #d4af37;
 
     border-radius:18px;
 
-    padding:20px;
+    padding:18px 20px;
 
     box-shadow:0 8px 20px rgba(0,0,0,.18);
-
 }
 
 .data-table{
