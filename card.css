@@ -65,6 +65,9 @@ body{
 
     position:relative;
 
+   transform-origin: top center;
+will-change: transform;
+
 }
 
 /* =======================================================
