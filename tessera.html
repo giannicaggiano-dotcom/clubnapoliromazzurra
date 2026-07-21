@@ -138,7 +138,89 @@
     </footer>
 
 </div>
+<script>
 
+fetch("soci.json")
+
+.then(response => {
+
+    if(!response.ok){
+
+        throw new Error("Errore nel caricamento del file soci.json");
+
+    }
+
+    return response.json();
+
+})
+
+.then(soci => {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const id = params.get("id") || "CNR-260001";
+
+    const socio = soci.find(s => s.id === id);
+
+    if(!socio){
+
+        document.body.innerHTML = `
+        <div style="padding:40px;font-family:Arial;text-align:center">
+            <h1>Tessera non trovata</h1>
+            <p>Il socio richiesto non esiste.</p>
+        </div>`;
+
+        return;
+
+    }
+
+    document.getElementById("nome").textContent =
+        socio.nome + " " + socio.cognome;
+
+    document.getElementById("qualifica").textContent =
+        socio.qualifica;
+
+    document.getElementById("numero").textContent =
+        socio.numero;
+
+    document.getElementById("iscrizione").textContent =
+        socio.iscrizione;
+
+    document.getElementById("validita").textContent =
+        socio.validita;
+
+    document.getElementById("foto").src =
+        socio.foto;
+
+    document.getElementById("foto").alt =
+        socio.nome + " " + socio.cognome;
+
+    const urlVerifica =
+        "https://giannicaggiano-dotcom.github.io/clubnapoliromazzurra/verifica.html?id="
+        + encodeURIComponent(id);
+
+    document.getElementById("qr").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
+        + encodeURIComponent(urlVerifica);
+
+})
+
+.catch(error => {
+
+    console.error(error);
+
+    document.body.innerHTML = `
+    <div style="padding:40px;font-family:Arial;text-align:center">
+
+        <h1>Errore</h1>
+
+        <p>Impossibile caricare i dati del socio.</p>
+
+    </div>`;
+
+});
+
+</script>
 </body>
 
 </html>
