@@ -1,55 +1,320 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verifica Tessera - Club Napoli Romazzurra</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#173f7d;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
-.card{width:420px;background:#1c4fa2;border:3px solid #d4af37;border-radius:20px;padding:30px;text-align:center;box-shadow:0 15px 35px rgba(0,0,0,.35)}
-.logo{width:110px;border-radius:50%;background:#fff;padding:8px;border:3px solid #d4af37}
-.ok{color:#48e06a;font-size:30px;font-weight:bold;margin:18px 0}
-#foto{width:140px;height:180px;object-fit:cover;border-radius:14px;border:3px solid #d4af37;margin:15px auto;display:block}
-table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.2)}
-th{text-align:left;color:#d4af37}
-.small{margin-top:18px;font-size:13px;color:#dbe7ff}
-</style>
-</head>
-<body>
-<div class="card">
-<img src="logo-centenario.jpeg" class="logo" alt="Logo">
-<div class="ok">✔ TESSERA VALIDA</div>
-<img id="foto" src="" alt="Foto socio">
-<h2 id="nome"></h2>
-<h3 id="qualifica" style="color:#d4af37"></h3>
-<table>
-<tr><th>Numero Tessera</th><td id="numero"></td></tr>
-<tr><th>Iscrizione</th><td id="iscrizione"></td></tr>
-<tr><th>Validità</th><td id="validita"></td></tr>
-</table>
-<div class="small">Club Napoli Romazzurra<br>Verifica ufficiale della tessera.</div>
-</div>
-<script>
-fetch("soci.json")
-.then(r=>r.json())
-.then(soci=>{
- const id=new URLSearchParams(location.search).get("id");
- const socio=soci.find(s=>s.id===id);
- if(!socio){
-   document.body.innerHTML="<h1 style='color:white'>Tessera non valida</h1>";
-   return;
- }
- foto.src=socio.foto;
- nome.textContent=socio.nome+" "+socio.cognome;
- qualifica.textContent=socio.qualifica;
- numero.textContent=socio.numero;
- iscrizione.textContent=socio.iscrizione;
- validita.textContent=socio.validita;
-})
-.catch(()=>{
- document.body.innerHTML="<h1 style='color:white'>Errore nel caricamento dati.</h1>";
-});
-</script>
-</body>
-</html>
+/* =====================================================
+   CLUB NAPOLI ROMAZZURRA
+   DESIGN SISTEMA DEFINITIVO - CARD WALLET EXACT MATCH
+===================================================== */
+
+:root {
+  --bg-page: #051329;
+  --card-bg: linear-gradient(180deg, #072246 0%, #03152e 100%);
+  --gold-primary: #d4af37;
+  --gold-light: #f5d77f;
+  --blue-text: #072246;
+  --text-white: #ffffff;
+  --text-sub: #b2c8e6;
+  --border-gold: #d4af37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* CONTAINER PRINCIPALE CARD */
+.card-wrapper {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-gold);
+  border-radius: 28px;
+  padding: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.card-header {
+  display: grid;
+  grid-template-columns: 85px 1fr 75px;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.header-left .logo-40 {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-center h1 {
+  color: var(--text-white);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.header-center h2 {
+  color: var(--gold-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.header-center p {
+  color: var(--text-sub);
+  font-size: 8.5px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.header-right {
+  text-align: center;
+}
+
+.anniversary-years {
+  color: var(--gold-primary);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.anniversary-divider {
+  height: 1px;
+  background-color: var(--gold-primary);
+  margin: 4px 0;
+}
+
+.anniversary-badge strong {
+  display: block;
+  color: var(--gold-primary);
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.anniversary-badge span {
+  color: var(--gold-primary);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ================= MAIN / SOCIO ================= */
+.card-body {
+  padding: 16px 0 12px 0;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.photo-box img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid var(--border-gold);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  color: var(--text-white);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.member-role {
+  color: var(--gold-primary);
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gold-primary);
+}
+
+/* RIGHE CON ICONE */
+.data-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.data-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--gold-primary);
+}
+
+.data-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-label {
+  color: var(--text-sub);
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-value {
+  color: var(--text-white);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* ================= QR CODE BOX ================= */
+.qr-section {
+  background: var(--text-white);
+  border: 2px solid var(--border-gold);
+  border-radius: 18px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.qr-label-area {
+  text-align: center;
+  flex: 1;
+}
+
+.qr-label-area h3 {
+  color: var(--blue-text);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.qr-badge-icon {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1.5px solid var(--gold-primary);
+  position: relative;
+}
+
+.qr-badge-icon::before, .qr-badge-icon::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 16px;
+  background-color: var(--gold-primary);
+  top: 50%;
+}
+
+.qr-badge-icon::before { left: -22px; }
+.qr-badge-icon::after { right: -22px; }
+
+.qr-badge-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--gold-primary);
+}
+
+.qr-image-area img {
+  width: 95px;
+  height: 95px;
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+.card-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border-gold);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #072246;
+  font-size: 12px;
+}
+
+.footer-text {
+  color: var(--gold-primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ERRORE INTEGRATO */
+.error-box {
+  text-align: center;
+  padding: 30px 10px;
+  color: var(--text-white);
+}
+
+.error-box h2 { color: #ff4757; font-size: 18px; margin-bottom: 8px; }
+.error-box p { color: var(--text-sub); font-size: 12px; }
