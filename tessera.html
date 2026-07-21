@@ -4,341 +4,140 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<title>Club Napoli Romazzurra</title>
 
-<title>Club Napoli Romazzurra - Tessera Socio</title>
+<link rel="stylesheet" href="card.css">
 
-<link rel="stylesheet"
-      href="card.css">
-
-<meta name="theme-color"
-      content="#0b2d5c">
-
-<meta name="color-scheme"
-      content="light">
+<meta name="theme-color" content="#0b2d5c">
 
 </head>
 
 <body>
 
-<div class="page">
-
-      <div class="card-wrapper">
-
 <div class="card">
 
-<!-- ===================================================== -->
-<!-- HEADER                                                 -->
-<!-- ===================================================== -->
+    <!-- HEADER -->
 
-<header class="header">
+    <header class="card-header">
 
-<div class="header-left">
+        <div class="logo-area">
 
-<img
-src="logo40.jpeg"
-alt="Logo 40° anniversario"
-class="logo40">
-
-</div>
-
-<div class="header-center">
-
-<h1>
-
-CLUB NAPOLI
-ROMAZZURRA
-
-</h1>
-
-<h2>
-
-TESSERA SOCIO
-UFFICIALE
-
-</h2>
-
-<p class="subtitle">
-
-Club riconosciuto
-dall'Associazione Italiana
-Napoli Club
-
-</p>
-
-</div>
-
-<div class="header-right">
-
-<div class="anno">
-
-1986 - 2026
-
-</div>
-
-<div class="celebra">
-
-40°
-
-ANNIVERSARIO
-
-</div>
-
-</div>
-
-</header>
-
-<!-- ===================================================== -->
-<!-- CONTENUTO                                              -->
-<!-- ===================================================== -->
-
-<section class="content">
-  <!-- ===================================================== -->
-<!-- FOTO SOCIO                                             -->
-<!-- ===================================================== -->
-
-<div class="photo-column">
-
-<div class="photo-frame">
-
-<img
-id="foto"
-class="foto"
-src=""
-alt="Foto del socio">
-
-</div>
-
-
-
-</div>
-
-<!-- ===================================================== -->
-<!-- DATI SOCIO                                             -->
-<!-- ===================================================== -->
-
-<div class="info-column">
-
-<div class="member-name">
-
-<h3
-id="nome">
-
-</h3>
-
-<p
-id="qualifica"
-class="qualifica">
-
-</p>
-
-</div>
-
-<div class="member-data">
-
-<table class="data-table">
-
-<tbody>
-
-<tr>
-
-<th>
-
-Numero Tessera
-
-</th>
-
-<td id="numero">
-
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-
-Data Iscrizione
-
-</th>
-
-<td id="iscrizione">
-
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-
-Validità
-
-</th>
-
-<td id="validita">
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-</div>
-<!-- ===================================================== -->
-<!-- COLONNA DESTRA                                         -->
-<!-- ===================================================== -->
-
-<div class="right-column">
-
-    <div class="qr-card">
-
-        <div class="qr-title">
-
-            VERIFICA
-            TESSERA
+            <img src="logo40.jpeg"
+                 class="logo40"
+                 alt="40° anniversario">
 
         </div>
 
-        <img
-            id="qr"
-            class="qr-image"
-            src=""
-            alt="QR Code">
+        <div class="title-area">
+
+            <h1>CLUB NAPOLI ROMAZZURRA</h1>
+
+            <h2>TESSERA SOCIO UFFICIALE</h2>
+
+            <p>
+                Club riconosciuto dall'Associazione Italiana Napoli Club
+            </p>
+
+        </div>
+
+        <div class="anniversary">
+
+            <span>1986</span>
+
+            <span>2026</span>
+
+            <strong>40°</strong>
+
+            <small>ANNIVERSARIO</small>
+
+        </div>
+
+    </header>
+
+    <!-- CONTENUTO -->
+
+    <main class="member">
+
+        <!-- FOTO -->
+
+        <section class="photo-box">
+
+            <img
+                id="foto"
+                class="photo"
+                src=""
+                alt="Socio">
+
+        </section>
+
+        <!-- DATI -->
+
+        <section class="info-box">
+
+            <h3 id="nome"></h3>
+
+            <div
+                id="qualifica"
+                class="role">
+            </div>
+
+            <div class="row">
+
+                <label>Numero Tessera</label>
+
+                <span id="numero"></span>
 
             </div>
 
-</div>
+            <div class="row">
 
-</section>
+                <label>Data Iscrizione</label>
 
-<!-- ===================================================== -->
-<!-- FOOTER                                                 -->
-<!-- ===================================================== -->
+                <span id="iscrizione"></span>
 
-<footer class="footer">
+            </div>
 
-    <div class="footer-left">
+            <div class="row">
 
-        Club Napoli Romazzurra
+                <label>Validità</label>
 
-    </div>
+                <span id="validita"></span>
 
-    <div class="footer-center">
+            </div>
+
+        </section>
+
+        <!-- QR -->
+
+        <section class="qr-box">
+
+            <div class="qr-title">
+
+                VERIFICA<br>TESSERA
+
+            </div>
+
+            <img
+                id="qr"
+                class="qr"
+                src=""
+                alt="QR">
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
 
         IDENTITÀ • PASSIONE • APPARTENENZA
 
-    </div>
-
-    <div class="footer-right">
-
-       Club Napoli Romazzurra
-
-    </div>
-
-</footer>
+    </footer>
 
 </div>
-
-            </div>
-
-</div>
-<script>
-
-fetch("soci.json")
-
-.then(response => {
-
-    if (!response.ok) {
-
-        throw new Error("Errore nel caricamento dei soci");
-
-    }
-
-    return response.json();
-
-})
-
-.then(soci => {
-
-    const params = new URLSearchParams(window.location.search);
-
-    const id = params.get("id") || "CNR-260001";
-
-    const socio = soci.find(s => s.id === id);
-
-    if (!socio) {
-
-        document.body.innerHTML = `
-            <div style="
-                font-family:Arial;
-                text-align:center;
-                margin-top:80px;">
-                <h1>Tessera non trovata</h1>
-                <p>Il codice richiesto non esiste.</p>
-            </div>`;
-
-        return;
-
-    }
-
-    document.getElementById("nome").textContent =
-        socio.nome + " " + socio.cognome;
-
-    document.getElementById("qualifica").textContent =
-        socio.qualifica;
-
-    document.getElementById("numero").textContent =
-        socio.numero;
-
-    document.getElementById("iscrizione").textContent =
-        socio.iscrizione;
-
-    document.getElementById("validita").textContent =
-        socio.validita;
-
-    document.getElementById("foto").src =
-        socio.foto;
-
-    document.getElementById("foto").alt =
-        socio.nome + " " + socio.cognome;
-
-    const urlVerifica =
-        "https://giannicaggiano-dotcom.github.io/clubnapoliromazzurra/verifica.html?id="
-        + encodeURIComponent(id);
-
-    document.getElementById("qr").src =
-        "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
-        + encodeURIComponent(urlVerifica);
-
-})
-
-.catch(error => {
-
-    console.error(error);
-
-    document.body.innerHTML = `
-        <div style="
-            font-family:Arial;
-            text-align:center;
-            margin-top:80px;">
-            <h1>Errore</h1>
-            <p>Impossibile caricare i dati della tessera.</p>
-        </div>`;
-
-});
-
-
-      
-</script>
 
 </body>
 
