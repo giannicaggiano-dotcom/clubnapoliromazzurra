@@ -1,87 +1,72 @@
-/* ==========================================================
+/* =====================================================
    CLUB NAPOLI ROMAZZURRA
-   CARD.CSS 2.0
-   PARTE 1
-========================================================== */
+   CARD.CSS
+   BLOCCO 2
+===================================================== */
+
+:root{
+
+    --blue:#0d3f86;
+    --blue-dark:#072b5d;
+    --gold:#d7ad2f;
+    --white:#ffffff;
+    --text:#eef4ff;
+
+}
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
-html,
 body{
-    width:100%;
-    min-height:100%;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#e8edf4;
-    color:#14213d;
-}
 
-.page{
-    width:100%;
-    min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#dde4ef;
     display:flex;
     justify-content:center;
-    align-items:flex-start;
-    padding:24px;
+    padding:18px;
+
 }
 
 .card{
-    width:980px;
+
+    width:100%;
+    max-width:420px;
+
     background:linear-gradient(
-        135deg,
-        #173f7d 0%,
-        #154b97 45%,
-        #1c4fa2 100%);
-    border:4px solid #d4af37;
-    border-radius:24px;
+        180deg,
+        var(--blue),
+        var(--blue-dark));
+
+    border:3px solid var(--gold);
+
+    border-radius:26px;
+
     overflow:hidden;
-    box-shadow:0 18px 45px rgba(0,0,0,.28);
-    position:relative;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.30);
+
 }
 
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,0) 45%);
-}
+/* ================= HEADER ================= */
 
-/* ==========================================================
-   HEADER
-========================================================== */
-
-.header{
+.card-header{
 
     display:grid;
 
-    grid-template-columns:120px 1fr 120px;
+    grid-template-columns:90px 1fr 75px;
+
+    gap:14px;
 
     align-items:center;
 
-    gap:18px;
+    padding:18px;
 
-    padding:22px 26px;
-
-    background:rgba(255,255,255,.05);
-
-    border-bottom:2px solid rgba(212,175,55,.45);
-
-}
-
-.header-left{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+    border-bottom:2px solid rgba(215,173,47,.6);
 
 }
 
@@ -89,446 +74,310 @@ body{
 
     width:82px;
 
-    height:auto;
+    display:block;
 
 }
 
-.header-center{
+.title-area h1{
 
-    text-align:center;
+    color:white;
 
-    color:#fff;
-
-}
-
-.header-center h1{
-
-    font-size:34px;
+    font-size:18px;
 
     line-height:1.05;
 
-    letter-spacing:2px;
-
     font-weight:700;
 
 }
 
-.header-center h2{
+.title-area h2{
 
-    margin-top:8px;
+    color:var(--gold);
 
-    color:#d4af37;
+    margin-top:6px;
 
-    font-size:18px;
-
-    letter-spacing:2px;
-
-}
-
-.subtitle{
-
-    margin-top:10px;
-
-    font-size:12px;
-
-    color:#dbe7ff;
-
-}
-
-.header-right{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#fff;
-
-}
-
-.anno{
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    margin-bottom:8px;
-
-}
-
-.celebra{
-
-    color:#d4af37;
-
-    font-size:18px;
-
-    line-height:1.15;
-
-    font-weight:bold;
-
-}
-
-/* ==========================================================
-   CONTENUTO
-========================================================== */
-
-.content{
-
-    display:grid;
-
-    grid-template-columns:220px 1fr 210px;
-
-    gap:28px;
-
-    padding:28px;
-
-    align-items:start;
-
-}
-
-/* ==========================================================
-   FOTO SOCIO
-========================================================== */
-
-.photo-column{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-}
-
-.photo-frame{
-
-    width:190px;
-
-    height:235px;
-
-    background:#fff;
-
-    border:4px solid #d4af37;
-
-    border-radius:18px;
-
-    padding:8px;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
-
-}
-
-.foto{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:12px;
-
-}
-
-/* ==========================================================
-   DATI SOCIO
-========================================================== */
-
-.info-column{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-}
-
-.member-name{
-
-    text-align:center;
-
-    margin-bottom:22px;
-
-}
-
-.member-name h3{
-
-    color:#fff;
-
-    font-size:34px;
-
-    font-weight:700;
+    font-size:13px;
 
     letter-spacing:1px;
 
 }
 
-.qualifica{
+.title-area p{
+
+    color:#dbe7ff;
 
     margin-top:8px;
 
-    color:#d4af37;
+    font-size:10px;
 
-    font-size:18px;
-
-    font-weight:700;
+    line-height:1.3;
 
 }
 
-.member-data{
+.anniversary{
 
-    background:#ffffff;
+    text-align:right;
+
+    color:white;
+
+}
+
+.anniversary span{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+.anniversary strong{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:var(--gold);
+
+    font-size:30px;
+
+}
+
+.anniversary small{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    font-weight:bold;
+
+}
+
+/* ================= CORPO ================= */
+
+.member{
+
+    padding:18px;
+
+}
+
+.photo-box{
+
+    text-align:center;
+
+}
+
+.photo{
+
+    width:170px;
+
+    aspect-ratio:3/4;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:3px solid var(--gold);
+
+}
+
+.info-box{
+
+    margin-top:18px;
+
+}
+
+.info-box h3{
+
+    color:white;
+
+    font-size:34px;
+
+    line-height:1.05;
+
+}
+
+.role{
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-top:8px;
+}
+/* ================= DATI ================= */
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:14px;
+
+    padding:12px 14px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+}
+
+.row label{
+
+    color:#dbe7ff;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.row span{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-align:right;
+
+}
+
+/* ================= QR ================= */
+
+.qr-box{
+
+    margin-top:24px;
+
+    background:white;
 
     border-radius:18px;
 
     padding:18px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
-
-}
-
-.data-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-.data-table th{
-
-    width:42%;
-
-    text-align:left;
-
-    padding:14px 10px;
-
-    color:#154b97;
-
-    font-size:15px;
-
-    border-bottom:1px solid #d9e3ef;
-
-}
-
-.data-table td{
-
-    padding:14px 10px;
-
-    color:#222;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    border-bottom:1px solid #d9e3ef;
-
-}
-
-.data-table tr:last-child th,
-.data-table tr:last-child td{
-
-    border-bottom:none;
-
-}
-
-/* ==========================================================
-   QR
-========================================================== */
-
-.right-column{
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-.qr-card{
-
-    width:180px;
-
-    background:#ffffff;
-
-    border-radius:18px;
-
-    padding:16px;
-
     text-align:center;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.20);
 
 }
 
 .qr-title{
 
-    color:#154b97;
+    color:var(--blue);
 
-    font-size:18px;
+    font-size:16px;
 
-    font-weight:bold;
+    font-weight:700;
 
-    margin-bottom:14px;
+    letter-spacing:1px;
 
-    line-height:1.2;
+    margin-bottom:12px;
 
 }
 
-.qr-image{
+.qr{
 
-    width:145px;
+    width:150px;
 
-    height:145px;
+    height:150px;
 
     display:block;
 
     margin:auto;
 
 }
-/* ==========================================================
-   FOOTER
-========================================================== */
 
-.footer{
+/* ================= FOOTER ================= */
 
-    display:grid;
+footer{
 
-    grid-template-columns:1fr auto 1fr;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:16px 24px;
-
-    background:rgba(0,0,0,.18);
-
-    border-top:2px solid rgba(212,175,55,.45);
-
-    color:#fff;
-
-    font-size:14px;
-
-}
-
-.footer-left{
-
-    text-align:left;
-
-    font-weight:600;
-
-}
-
-.footer-center{
+    padding:16px;
 
     text-align:center;
 
-    color:#d4af37;
+    color:var(--gold);
+
+    font-size:12px;
 
     font-weight:700;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
+
+    border-top:2px solid rgba(215,173,47,.40);
 
 }
 
-.footer-right{
+/* ================= DESKTOP ================= */
 
-    text-align:right;
+@media(min-width:900px){
 
-    font-weight:600;
+body{
 
-}
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width:1100px){
-
-    .page{
-
-        padding:18px;
-
-        overflow-x:auto;
-
-    }
-
-    .card{
-
-        width:980px;
-
-        min-width:980px;
-
-    }
+    padding:40px;
 
 }
 
-/* ==========================================================
-   SMARTPHONE
-========================================================== */
+.card{
 
-@media (max-width:700px){
-
-    body{
-
-        background:#dfe6ef;
-
-    }
-
-    .page{
-
-        justify-content:flex-start;
-
-        align-items:flex-start;
-
-        overflow-x:auto;
-
-        padding:12px;
-
-    }
-
-    .card{
-
-        width:980px;
-
-        min-width:980px;
-
-    }
+    max-width:760px;
 
 }
 
-/* ==========================================================
-   STAMPA
-========================================================== */
+.member{
 
-@media print{
+    display:grid;
 
-    body{
+    grid-template-columns:200px 1fr;
 
-        background:#fff;
+    column-gap:28px;
 
-    }
+    align-items:start;
 
-    .page{
+}
 
-        padding:0;
+.photo-box{
 
-    }
+    margin:0;
 
-    .card{
+}
 
-        width:100%;
+.info-box{
 
-        min-width:0;
+    margin-top:0;
 
-        box-shadow:none;
+}
 
-        border-width:2px;
+.qr-box{
 
-    }
+    margin-top:26px;
+
+}
+
+.title-area h1{
+
+    font-size:28px;
+
+}
+
+.title-area h2{
+
+    font-size:16px;
+
+}
+
+.title-area p{
+
+    font-size:12px;
+
+}
 
 }
