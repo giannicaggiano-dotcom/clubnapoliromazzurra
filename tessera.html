@@ -2,225 +2,162 @@
 <html lang="it">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Club Napoli Romazzurra</title>
-
-<link rel="stylesheet" href="card.css">
-
-<meta name="theme-color" content="#0b2d5c">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Club Napoli Romazzurra - Tessera Ufficiale</title>
+    
+    <link rel="stylesheet" href="card.css">
+    <meta name="theme-color" content="#051329">
 </head>
 
 <body>
 
-<div class="card">
+    <div class="card-wrapper">
+        
+        <!-- HEADER -->
+        <header class="card-header">
+            <div class="header-left">
+                <img src="logo40.jpeg" class="logo-40" alt="40° Anniversario">
+            </div>
 
-    <!-- HEADER -->
+            <div class="header-center">
+                <h1>CLUB NAPOLI<br>ROMAZZURRA</h1>
+                <h2>Tessera Socio Ufficiale</h2>
+                <p>Club riconosciuto dall'Associazione<br>Italiana Napoli Club</p>
+            </div>
 
-    <header class="card-header">
+            <div class="header-right">
+                <div class="anniversary-years">1986<br>2026</div>
+                <div class="anniversary-divider"></div>
+                <div class="anniversary-badge">
+                    <strong>40°</strong>
+                    <span>ANNIVERSARIO</span>
+                </div>
+            </div>
+        </header>
 
-        <div class="logo-area">
+        <!-- CORPO CARD -->
+        <div id="cardContent">
+            <main class="card-body">
+                <!-- FOTO -->
+                <div class="photo-box">
+                    <img id="foto" src="" alt="Foto Socio">
+                </div>
 
-            <img src="logo40.jpeg"
-                 class="logo40"
-                 alt="40° anniversario">
+                <!-- DATI SOCIO -->
+                <div class="member-info">
+                    <h2 id="nome" class="member-name">---</h2>
+                    <div id="qualifica" class="member-role">---</div>
 
+                    <div class="data-list">
+                        <!-- NUMERO TESSERA -->
+                        <div class="data-row">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h5v-2h-5v2zm0-4h5v-2h-5v2zm-5 4h3v-6H7v6zm1.5-7c.83 0 1.5-.67 1.5-1.5S9.33 9 8.5 9 7 9.67 7 10.5 7.67 12 8.5 12z"/></svg>
+                            </div>
+                            <div class="data-text">
+                                <span class="data-label">Numero Tessera</span>
+                                <span id="numero" class="data-value">---</span>
+                            </div>
+                        </div>
+
+                        <!-- DATA ISCRIZIONE -->
+                        <div class="data-row">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                            </div>
+                            <div class="data-text">
+                                <span class="data-label">Data Iscrizione</span>
+                                <span id="iscrizione" class="data-value">---</span>
+                            </div>
+                        </div>
+
+                        <!-- VALIDITÀ -->
+                        <div class="data-row">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                            </div>
+                            <div class="data-text">
+                                <span class="data-label">Validità</span>
+                                <span id="validita" class="data-value">---</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- SEZIONE QR CODE -->
+            <section class="qr-section">
+                <div class="qr-label-area">
+                    <h3>VERIFICA<br>TESSERA</h3>
+                    <div class="qr-badge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                </div>
+                <div class="qr-image-area">
+                    <img id="qr" src="" alt="QR Code Verifica">
+                </div>
+            </section>
         </div>
 
-        <div class="title-area">
-
-            <h1>CLUB NAPOLI ROMAZZURRA</h1>
-
-            <h2>TESSERA SOCIO UFFICIALE</h2>
-
-            <p>
-                Club riconosciuto dall'Associazione Italiana Napoli Club
-            </p>
-
-        </div>
-
-        <div class="anniversary">
-
-            <span>1986</span>
-
-            <span>2026</span>
-
-            <strong>40°</strong>
-
-            <small>ANNIVERSARIO</small>
-
-        </div>
-
-    </header>
-
-    <!-- CONTENUTO -->
-
-    <main class="member">
-
-        <!-- FOTO -->
-
-        <section class="photo-box">
-
-            <img
-                id="foto"
-                class="photo"
-                src=""
-                alt="Socio">
-
-        </section>
-
-        <!-- DATI -->
-
-        <section class="info-box">
-
-            <h3 id="nome"></h3>
-
-            <div
-                id="qualifica"
-                class="role">
-            </div>
-
-            <div class="row">
-
-                <label>Numero Tessera</label>
-
-                <span id="numero"></span>
-
-            </div>
-
-            <div class="row">
-
-                <label>Data Iscrizione</label>
-
-                <span id="iscrizione"></span>
-
-            </div>
-
-            <div class="row">
-
-                <label>Validità</label>
-
-                <span id="validita"></span>
-
-            </div>
-
-        </section>
-
-        <!-- QR -->
-
-        <section class="qr-box">
-
-            <div class="qr-title">
-
-                VERIFICA<br>TESSERA
-
-            </div>
-
-            <img
-                id="qr"
-                class="qr"
-                src=""
-                alt="QR">
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        IDENTITÀ • PASSIONE • APPARTENENZA
-
-    </footer>
-
-</div>
-<script>
-
-fetch("soci.json")
-
-.then(response => {
-
-    if(!response.ok){
-
-        throw new Error("Errore nel caricamento del file soci.json");
-
-    }
-
-    return response.json();
-
-})
-
-.then(soci => {
-
-    const params = new URLSearchParams(window.location.search);
-
-    const id = params.get("id") || "CNR-260001";
-
-    const socio = soci.find(s => s.id === id);
-
-    if(!socio){
-
-        document.body.innerHTML = `
-        <div style="padding:40px;font-family:Arial;text-align:center">
-            <h1>Tessera non trovata</h1>
-            <p>Il socio richiesto non esiste.</p>
-        </div>`;
-
-        return;
-
-    }
-
-    document.getElementById("nome").textContent =
-        socio.nome + " " + socio.cognome;
-
-    document.getElementById("qualifica").textContent =
-        socio.qualifica;
-
-    document.getElementById("numero").textContent =
-        socio.numero;
-
-    document.getElementById("iscrizione").textContent =
-        socio.iscrizione;
-
-    document.getElementById("validita").textContent =
-        socio.validita;
-
-    document.getElementById("foto").src =
-        socio.foto;
-
-    document.getElementById("foto").alt =
-        socio.nome + " " + socio.cognome;
-
-    const urlVerifica =
-        "https://giannicaggiano-dotcom.github.io/clubnapoliromazzurra/verifica.html?id="
-        + encodeURIComponent(id);
-
-    document.getElementById("qr").src =
-        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
-        + encodeURIComponent(urlVerifica);
-
-})
-
-.catch(error => {
-
-    console.error(error);
-
-    document.body.innerHTML = `
-    <div style="padding:40px;font-family:Arial;text-align:center">
-
-        <h1>Errore</h1>
-
-        <p>Impossibile caricare i dati del socio.</p>
-
-    </div>`;
-
-});
-
-</script>
+        <!-- FOOTER -->
+        <footer class="card-footer">
+            <div class="footer-logo">N</div>
+            <div class="footer-text">Identità • Passione • Appartenenza</div>
+            <div class="footer-logo">N</div>
+        </footer>
+
+    </div>
+
+    <!-- LOGICA JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("soci.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Errore nel caricamento del file soci.json");
+                    }
+                    return response.json();
+                })
+                .then(soci => {
+                    const params = new URLSearchParams(window.location.search);
+                    const id = params.get("id") || "CNR-260001";
+                    const socio = soci.find(s => s.id === id);
+
+                    if (!socio) {
+                        showError("Tessera non trovata", "Il socio richiesto non esiste o il codice non è valido.");
+                        return;
+                    }
+
+                    // Compilazione dati
+                    document.getElementById("nome").innerHTML = `${socio.nome}<br>${socio.cognome}`;
+                    document.getElementById("qualifica").textContent = socio.qualifica || "Socio";
+                    document.getElementById("numero").textContent = String(socio.numero).padStart(6, '0');
+                    document.getElementById("iscrizione").textContent = socio.iscrizione;
+                    document.getElementById("validita").textContent = socio.validita;
+                    
+                    document.getElementById("foto").src = socio.foto;
+                    document.getElementById("foto").alt = `${socio.nome} ${socio.cognome}`;
+
+                    // QR Code verso verifica.html
+                    const urlVerifica = `https://giannicaggiano-dotcom.github.io/clubnapoliromazzurra/verifica.html?id=${encodeURIComponent(id)}`;
+                    document.getElementById("qr").src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(urlVerifica)}`;
+                })
+                .catch(error => {
+                    console.error(error);
+                    showError("Errore di Sistema", "Impossibile caricare i dati del socio.");
+                });
+
+            function showError(title, message) {
+                document.getElementById("cardContent").innerHTML = `
+                    <div class="error-box">
+                        <h2>${title}</h2>
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
 </body>
 
 </html>
